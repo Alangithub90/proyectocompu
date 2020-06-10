@@ -1,5 +1,4 @@
-#class aeropuerto:
- # def __init__(self, puerta, rfc, direccion, saldo_inicial):
+
     
 class boleto:
   def __init__(self, costo, avion, premium):
@@ -14,7 +13,7 @@ class boleto:
     if (persona.dinero<self.costo):
       print("no hay fondos")
     elif((self.avion.asientos)<=(0)):
-      print("no hay asientoslibres")
+      print("no hay asientos libres")
     else:
       self.dueno=persona
       persona.dinero=(persona.dinero)-(self.costo)
@@ -54,6 +53,4 @@ print(boleto1.dueno)
 
 print(avion1)#ahora hay menos asientos ya que se ocuparon al comprar boletos
 print(avion2)
-
-
 
