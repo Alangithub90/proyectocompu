@@ -31,10 +31,11 @@ class persona:
         self.puerta=puerta
         self.asientos=asientos
 
-boleto1=boleto(500,boeing,true)
-boleto2=boleto(50,aeromex,false)
+
 avion1=avion(china,2,50)
 avion2=avion(mexico,3,10)
+boleto1=boleto(500,avion1,true)
+boleto2=boleto(50,avion2,false)
 persona1= persona(1000)
 persona2= persona(200)
 
