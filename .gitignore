@@ -11,9 +11,13 @@ class boleto:
     def comprarboleto(persona):
         if (persona.dinero<costo):
             print(no hay fondos)
+        elif((self.avion.asientos)<=(0))
+            print(no hay asientoslibres)
         else:
             self.dueno=persona
             persona.dinero=(persona.dinero)-(self.costo)
+            self.avion.asientos=(self.avion.asientos)-1
+            
     
 class avion:
     def __init__(self, destino, puerta, asientos):
@@ -27,5 +31,10 @@ class persona:
         self.puerta=puerta
         self.asientos=asientos
 
+boleto1=boleto(500,boeing,true)
+boleto2=boleto(50,aeromex,false)
+avion1=avion(china,2,50)
+avion2=avion(mexico,3,10)
+persona1= persona(1000)
+persona2= persona(200)
 
-persona1=
