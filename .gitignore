@@ -1,9 +1,24 @@
-class aeropuertos:
+class aeropuerto:
     def __init__(self, puerta, rfc, direccion, saldo_inicial):
     
-class boletos:
-    def __init__(self, costo, puerta, avion, premium):
+class boleto:
+    def __init__(self, avion, premium):
     self.costo=costo
-    self.puerta=puerta
+    self.puerta=avion.puerta
     self.avion=avion
     self.premium=premium
+    
+class avion:
+    def __init__(self, destino, puerta, asientos):
+    self.destino=destino
+    self.puerta=puerta
+    self.asientos=asientos
+    
+class persona:
+    def __init__(self, destino, puerta, asientos):
+    self.destino=destino
+    self.puerta=puerta
+    self.asientos=asientos
+
+
+persona1=
