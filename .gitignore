@@ -1,5 +1,4 @@
-  
-class boleto:
+lass boleto:
   def __init__(self, costo, avion, premium):
     self.costo=costo
     self.puerta=avion.puerta
@@ -68,7 +67,11 @@ boleto3=boleto(300,avion1,0)
 persona3=persona(500)
 equipaje1=equipaje(30)
 persona3.equipaje=equipaje1
-boleto3.comprarboleto(persona3) #no puede comprar el boleto porque trae equipaje pesado
+boleto3.comprarboleto(persona3) #no puede comprar el boleto3 porque trae equipaje pesado
 
 persona4=persona(1000)
-boleto1.comprarboleto(persona4) #no puede comprar boleto porque ya fue comprado
+equipaje2=equipaje(10)
+persona4.equipaje=equipaje2
+boleto1.comprarboleto(persona4) #no puede comprar boleto1 porque ya fue comprado
+boleto3.comprarboleto(persona4) #compra el boleto3 ya que trae equipaje lijero y no se ha comprado
+print(boleto3.dueno)
