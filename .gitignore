@@ -5,18 +5,20 @@ class boleto:
   def __init__(self, costo, avion, premium):
     self.costo=costo
     self.puerta=avion.puerta
+    self.destino=avion.destino
     self.avion=avion
     self.premium=premium
-    self.dueno=0
-    def comprarboleto(persona):
-      if (persona.dinero<costo):
-        print("no hay fondos")
-      elif((self.avion.asientos)<=(0)):
-        print("no hay asientoslibres")
-      else:
-        self.dueno=persona
-        persona.dinero=(persona.dinero)-(self.costo)
-        self.avion.asientos=(self.avion.asientos)-1
+    self.dueno="no tiene dueno"
+
+  def comprarboleto(self, persona):
+    if (persona.dinero<self.costo):
+      print("no hay fondos")
+    elif((self.avion.asientos)<=(0)):
+      print("no hay asientoslibres")
+    else:
+      self.dueno=persona
+      persona.dinero=(persona.dinero)-(self.costo)
+      self.avion.asientos=(self.avion.asientos)-1
             
     
 class avion:
@@ -24,6 +26,9 @@ class avion:
         self.destino=destino
         self.puerta=puerta
         self.asientos=asientos
+
+    def __str__(self):
+        return f"destino:{self.destino}  puerta:{self.puerta}  asientos:{self.asientos}"
     
 class persona:
     def __init__(self, dinero):
@@ -37,6 +42,18 @@ boleto2=boleto(50,avion2,0)
 persona1= persona(1000)
 persona2= persona(200)
 
-boleto1.comprarboleto(persona2)
-boleto2.comprarboleto(persona2)
-boleto1.comprarboleto(persona1)
+print(avion1)#los datos iniciales del avion
+print(avion2)
+boleto1.comprarboleto(persona2) #persona2 no tiene dinero para comprar boleto1
+print(boleto1.dueno)            #no tiene dueno ya que no se pudo comprar
+boleto2.comprarboleto(persona2) #persona2 tiene dinero para comprar boleto2 que es barato
+print(boleto2.dueno)            #si se compro y tiene dueno
+boleto1.comprarboleto(persona1) #persona1 tiene dinero para boleto1
+print(boleto1.dueno)
+
+
+print(avion1)#ahora hay menos asientos ya que se ocuparon al comprar boletos
+print(avion2)
+
+
+
