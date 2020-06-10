@@ -1,5 +1,4 @@
-
-    
+  
 class boleto:
   def __init__(self, costo, avion, premium):
     self.costo=costo
@@ -10,14 +9,19 @@ class boleto:
     self.dueno="no tiene dueno"
 
   def comprarboleto(self, persona):
-    if (persona.dinero<self.costo):
+    if ((self.dueno)!=("no tiene dueno")):
+      print("ese boleto ya fue comprado")
+    elif (persona.dinero<self.costo):
       print("no hay fondos")
     elif((self.avion.asientos)<=(0)):
       print("no hay asientos libres")
     else:
-      self.dueno=persona
-      persona.dinero=(persona.dinero)-(self.costo)
-      self.avion.asientos=(self.avion.asientos)-1
+      if(persona.equipaje==0 or persona.equipaje.peso<=20):
+        self.dueno=persona
+        persona.dinero=(persona.dinero)-(self.costo)
+        self.avion.asientos=(self.avion.asientos)-1
+      else:
+        print("el equipaje es demasiado pesado")
             
     
 class avion:
@@ -32,6 +36,12 @@ class avion:
 class persona:
     def __init__(self, dinero):
         self.dinero=dinero
+        self.equipaje=0
+
+class equipaje:
+    def __init__(self, peso):
+        self.peso=peso
+        
 
 
 avion1=avion("china",2,50)
@@ -54,3 +64,11 @@ print(boleto1.dueno)
 print(avion1)#ahora hay menos asientos ya que se ocuparon al comprar boletos
 print(avion2)
 
+boleto3=boleto(300,avion1,0)
+persona3=persona(500)
+equipaje1=equipaje(30)
+persona3.equipaje=equipaje1
+boleto3.comprarboleto(persona3) #no puede comprar el boleto porque trae equipaje pesado
+
+persona4=persona(1000)
+boleto1.comprarboleto(persona4) #no puede comprar boleto porque ya fue comprado
