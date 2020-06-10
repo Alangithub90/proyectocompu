@@ -2,23 +2,30 @@ class aeropuerto:
     def __init__(self, puerta, rfc, direccion, saldo_inicial):
     
 class boleto:
-    def __init__(self, avion, premium):
-    self.costo=costo
-    self.puerta=avion.puerta
-    self.avion=avion
-    self.premium=premium
+    def __init__(self, costo, avion, premium):
+        self.costo=costo
+        self.puerta=avion.puerta
+        self.avion=avion
+        self.premium=premium
+        self.dueno=0
+    def comprarboleto(persona):
+        if (persona.dinero<costo):
+            print(no hay fondos)
+        else:
+            self.dueno=persona
+            persona.dinero=(persona.dinero)-(self.costo)
     
 class avion:
     def __init__(self, destino, puerta, asientos):
-    self.destino=destino
-    self.puerta=puerta
-    self.asientos=asientos
+        self.destino=destino
+        self.puerta=puerta
+        self.asientos=asientos
     
 class persona:
-    def __init__(self, destino, puerta, asientos):
-    self.destino=destino
-    self.puerta=puerta
-    self.asientos=asientos
+    def __init__(self, dinero):
+        self.destino=destino
+        self.puerta=puerta
+        self.asientos=asientos
 
 
 persona1=
